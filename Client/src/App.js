@@ -1,12 +1,17 @@
-import { Route } from "react-router-dom";
+
 import {Login} from "./Pages/Signin/Login";
+import { Routes, Route } from 'react-router-dom';
 import UserModeSelection from "./Pages/UserModeSelection";
 function App() {
   return (
     <div className="App">
-       <Route path="/" exact component={Login} />
-      <Route path="/user-mode" component={UserModeSelection} />
+      <Routes>
 
+
+     
+       <Route path="/"  element={<Login/>} />
+      <Route path="/user-mode" element={<UserModeSelection/>} />
+      </Routes>
     </div>
   );
 }
