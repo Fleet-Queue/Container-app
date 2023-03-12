@@ -1,13 +1,19 @@
-import { Route } from "react-router-dom";
-import {Login} from "./Pages/Signin/Login";
-import {Transporter} from "./Pages/Transporter";
 
+import {Login} from "./Pages/Signin/Login";
+import { Routes, Route } from 'react-router-dom';
+import UserModeSelection from "./Pages/UserModeSelection";
+import {Transporter} from "./Pages/Transporter";
 function App() {
   return (
     <div className="App">
-      <Route path="/" exact component={Login} />
-      <Route path="/transporter" exact component={Transporter} />
 
+      <Routes>
+
+     
+       <Route path="/"  element={<Login/>} />
+      <Route path="/user-mode" element={<UserModeSelection/>} />
+      <Route path="/transporter" element={<Transporter/>} />
+      </Routes>
     </div>
   );
 }

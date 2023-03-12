@@ -10,13 +10,45 @@ import {
     HStack,
     Input,
     Stack,
-
+     InputGroup, InputRightElement,
+     useToast
   } from '@chakra-ui/react'
-  import { Logo } from './Logo'
-  // import { OAuthButtonGroup } from './OAuthButtonGroup'
-  import { PasswordField } from './PasswordField'
   
-  export const Login = () => (
+  import { useNavigate } from 'react-router-dom';
+
+  import { Logo } from './Logo'
+  import React, { useState } from 'react'
+  // import { OAuthButtonGroup } from './OAuthButtonGroup'
+ 
+  export const Login = () =>{ 
+    const toast = useToast()
+    const navigate = useNavigate();
+    const [Mobno, setMobno] = useState('')
+    const [otp, setOtp] = useState('');
+    const [password, setPassword] = useState();
+    const [Show, setShow] = useState(false);
+    const [loading,setLoading]=useState(false);
+  
+
+    const handleClick = () => setShow(!Show);
+
+    const submitHandler =async (e) => {
+      setLoading(true)
+      if(!Mobno || !password){
+        toast({
+          title: "Fill all the fields! ",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        })
+          setLoading(false)
+          return
+      }else{
+        navigate("/user-mode")
+      }
+    }
+
+    return(
     <Container
       maxW="lg"
       py={{
@@ -79,10 +111,35 @@ import {
           <Stack spacing="6">
             <Stack spacing="5">
               <FormControl>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Input id="email" type="email" />
+                <FormLabel htmlFor="mobile">Mobile No:</FormLabel>
+                <Input id="mobile" type="text"  onChange={(e)=>setMobno(e.target.value)}
+            value={Mobno} />
               </FormControl>
-              <PasswordField />
+              <FormControl>
+                <FormLabel htmlFor="password">Password</FormLabel>
+                
+                <InputGroup>
+<Input
+type={Show?"text":"password"}
+placeholder='Enter Your Password'
+value={password}
+onChange={(e)=>setPassword(e.target.value)}/>
+
+<InputRightElement width="4.5rem">
+<Button h="1.75rem" size="sm" onClick={handleClick}>
+{Show ? "Hide" : "Show"}
+</Button>
+</InputRightElement>
+
+
+</InputGroup>
+              </FormControl>
+              {/* <PasswordField /> */}
+              {/* <FormControl>
+                <FormLabel htmlFor="otp">Otp:</FormLabel>
+                <Input id="otp" type="text"  onChange={(e)=>setOtp(e.target.value)}
+            value={otp} />
+              </FormControl> */}
             </Stack>
             <HStack justify="space-between">
               <Checkbox defaultChecked>Remember me</Checkbox>
@@ -94,7 +151,7 @@ import {
             {/* Google Twitter Authentification code */}
 
             <Stack spacing="6">
-              <Button colorScheme='blue'>Sign in</Button>
+              <Button colorScheme='blue' onClick={submitHandler} isLoading={loading}>Sign in</Button>
               {/* <HStack>
                 <Divider />
                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">
@@ -109,4 +166,4 @@ import {
         </Box>
       </Stack>
     </Container>
-  )
+  )}
