@@ -15,7 +15,7 @@ export function SideDrawer(){
           <>
             <IconButton
             size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            icon={ <HamburgerIcon />}
             aria-label={'Open Menu'}
             ref={btnRef}
             onClick={onOpen}
@@ -24,14 +24,14 @@ export function SideDrawer(){
             
             <Drawer
               isOpen={isOpen}
-              placement='right'
+              placement='left'
               onClose={onClose}
               finalFocusRef={btnRef}
             >
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>Create your account</DrawerHeader>
+                <DrawerHeader>Transporter Dashboard</DrawerHeader>
       
                 <DrawerBody>
                   <Input placeholder='Type here...' />
