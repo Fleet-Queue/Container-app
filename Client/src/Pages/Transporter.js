@@ -62,6 +62,10 @@ export  const Transporter = () => {
 <div className="row">
   <div className="posters">
 
+    
+
+    
+
   <Grid
   templateAreas={`"header header"
                   "nav main"
@@ -69,89 +73,106 @@ export  const Transporter = () => {
   gridTemplateRows={'50px 1fr 40px'}
   gridTemplateColumns={'250px 1fr'}
   h='200px'
-  gap='1'
+  gap='0'
   color='blackAlpha.700'
   fontWeight='bold'
   m={2}
   border='1px'
-  borderColor='blacK'
+  borderRadius='10px'
+  borderColor='#D4E5F6'
+  boxShadow={'md'}
 >
 
-  <GridItem pl='2' pt='1' bg='orange.300' area={'header'}>
+  <GridItem pl='2' pt='1' bg='#D4E5F6' borderTopRadius={10} fontSize='2xl' area={'header'}>
     KL-40-1234
   </GridItem>
-  <GridItem pl='2'pt='1' bg='pink.300' area={'nav'}>
+  <GridItem pl='2'pt='1' bg='#D4E5F6'borderBottomStartRadius={10} area={'nav'}>
     NATIONAL TRANSPORT <br/>
     ALL KERALA TRANSPORT<br/>
     LOCAL TRANSPORT
 
   </GridItem>
-  <GridItem pl='2' bg='green.300' area={'main'}>
+  <GridItem pl='2' bg='#D4E5F6' area={'main'}>
     20 FT
   </GridItem>
-  <GridItem pl='0' pt='1' bg='blue.300' area={'footer'}>
+  <GridItem pl='0' pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
   <WrapItem>
-      <Button colorScheme='red' size='sm'>Cancel</Button>
+      <Button colorScheme='blue' size='sm'>Cancel</Button>
     </WrapItem>
   </GridItem>
 </Grid> 
 
- <Grid
-  templateAreas={`"header header"
-                  "nav main"
-                  "nav footer"`}
-  gridTemplateRows={'50px 1fr 30px'}
-  gridTemplateColumns={'250px 1fr'}
-  h='200px'
-  gap='1'
-  color='blackAlpha.700'
-  fontWeight='bold'
-  m={2}
-  border='1px'
-  borderColor='blacK'
->
-
-  <GridItem pl='2' bg='orange.300' area={'header'}>
-    Header
-  </GridItem>
-  <GridItem pl='2' bg='pink.300' area={'nav'}>
-    Nav
-  </GridItem>
-  <GridItem pl='2' bg='green.300' area={'main'}>
-    Main
-  </GridItem>
-  <GridItem pl='2' bg='blue.300' area={'footer'}>
-    Cancel
-  </GridItem>
-</Grid>  
 <Grid
   templateAreas={`"header header"
                   "nav main"
                   "nav footer"`}
-  gridTemplateRows={'50px 1fr 30px'}
+  gridTemplateRows={'50px 1fr 40px'}
   gridTemplateColumns={'250px 1fr'}
   h='200px'
-  gap='1'
+  gap='0'
   color='blackAlpha.700'
   fontWeight='bold'
   m={2}
   border='1px'
-  borderColor='blacK'
+  borderRadius='10px'
+  borderColor='#D4E5F6'
 >
 
-  <GridItem pl='2' bg='orange.300' area={'header'}>
-    Header
+  <GridItem pl='2' pt='1' bg='#D4E5F6' borderTopRadius={10} area={'header'}>
+    KL-40-1234
   </GridItem>
-  <GridItem pl='2' bg='pink.300' area={'nav'}>
-    Nav
+  <GridItem pl='2'pt='1' bg='#D4E5F6'borderBottomStartRadius={10} area={'nav'}>
+    NATIONAL TRANSPORT <br/>
+    ALL KERALA TRANSPORT<br/>
+    LOCAL TRANSPORT
+
   </GridItem>
-  <GridItem pl='2' bg='green.300' area={'main'}>
-    Main
+  <GridItem pl='2' bg='#D4E5F6' area={'main'}>
+    20 FT
   </GridItem>
-  <GridItem pl='2' bg='blue.300' area={'footer'}>
-    Footer
+  <GridItem pl='0' pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
+  <WrapItem>
+      <Button colorScheme='blue' size='sm'>Cancel</Button>
+    </WrapItem>
   </GridItem>
-</Grid> 
+</Grid>
+
+<Grid
+  templateAreas={`"header header"
+                  "nav main"
+                  "nav footer"`}
+  gridTemplateRows={'50px 1fr 40px'}
+  gridTemplateColumns={'250px 1fr'}
+  h='200px'
+  gap='0'
+  color='blackAlpha.700'
+  fontWeight='bold'
+  m={2}
+  border='1px'
+  borderRadius='10px'
+  borderColor='#D4E5F6'
+>
+
+  <GridItem pl='2' pt='1' bg='#D4E5F6' borderTopRadius={10} area={'header'}>
+    KL-40-1234
+  </GridItem>
+  <GridItem pl='2'pt='1' bg='#D4E5F6'borderBottomStartRadius={10} area={'nav'}>
+    NATIONAL TRANSPORT <br/>
+    ALL KERALA TRANSPORT<br/>
+    LOCAL TRANSPORT
+
+  </GridItem>
+  <GridItem pl='2' bg='#D4E5F6' area={'main'}>
+    20 FT
+  </GridItem>
+  <GridItem pl='0' pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
+  <WrapItem>
+      <Button colorScheme='blue' size='sm'>Cancel</Button>
+    </WrapItem>
+  </GridItem>
+</Grid>
+
+
 
   </div>
 </div>
