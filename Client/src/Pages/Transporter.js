@@ -18,7 +18,12 @@ import {
   Center,
   InputRightAddon,
   InputGroup,
-  InputRightElement
+  InputRightElement,
+  Text,
+  Grid,
+  GridItem,
+  WrapItem,
+
 } from '@chakra-ui/react';
 
 import {Search2Icon} from '@chakra-ui/icons';
@@ -48,6 +53,139 @@ export  const Transporter = () => {
   </InputGroup>
 </Box>
 
+
+<Stack mt={3} ml={3} direction={'row'} spacing={40}>
+  <Text color="black" fontWeight="bold">Alotted/Ongoing</Text>
+  <Text color="black" fontWeight="bold">20ft/40ft</Text>
+</Stack>
+
+<div className="row">
+  <div className="posters">
+
+  <Grid
+  templateAreas={`"header header"
+                  "nav main"
+                  "nav footer"`}
+  gridTemplateRows={'50px 1fr 40px'}
+  gridTemplateColumns={'250px 1fr'}
+  h='200px'
+  gap='1'
+  color='blackAlpha.700'
+  fontWeight='bold'
+  m={2}
+  border='1px'
+  borderColor='blacK'
+>
+
+  <GridItem pl='2' pt='1' bg='orange.300' area={'header'}>
+    KL-40-1234
+  </GridItem>
+  <GridItem pl='2'pt='1' bg='pink.300' area={'nav'}>
+    NATIONAL TRANSPORT <br/>
+    ALL KERALA TRANSPORT<br/>
+    LOCAL TRANSPORT
+
+  </GridItem>
+  <GridItem pl='2' bg='green.300' area={'main'}>
+    20 FT
+  </GridItem>
+  <GridItem pl='0' pt='1' bg='blue.300' area={'footer'}>
+  <WrapItem>
+      <Button colorScheme='red' size='sm'>Cancel</Button>
+    </WrapItem>
+  </GridItem>
+</Grid> 
+
+ <Grid
+  templateAreas={`"header header"
+                  "nav main"
+                  "nav footer"`}
+  gridTemplateRows={'50px 1fr 30px'}
+  gridTemplateColumns={'250px 1fr'}
+  h='200px'
+  gap='1'
+  color='blackAlpha.700'
+  fontWeight='bold'
+  m={2}
+  border='1px'
+  borderColor='blacK'
+>
+
+  <GridItem pl='2' bg='orange.300' area={'header'}>
+    Header
+  </GridItem>
+  <GridItem pl='2' bg='pink.300' area={'nav'}>
+    Nav
+  </GridItem>
+  <GridItem pl='2' bg='green.300' area={'main'}>
+    Main
+  </GridItem>
+  <GridItem pl='2' bg='blue.300' area={'footer'}>
+    Cancel
+  </GridItem>
+</Grid>  
+<Grid
+  templateAreas={`"header header"
+                  "nav main"
+                  "nav footer"`}
+  gridTemplateRows={'50px 1fr 30px'}
+  gridTemplateColumns={'250px 1fr'}
+  h='200px'
+  gap='1'
+  color='blackAlpha.700'
+  fontWeight='bold'
+  m={2}
+  border='1px'
+  borderColor='blacK'
+>
+
+  <GridItem pl='2' bg='orange.300' area={'header'}>
+    Header
+  </GridItem>
+  <GridItem pl='2' bg='pink.300' area={'nav'}>
+    Nav
+  </GridItem>
+  <GridItem pl='2' bg='green.300' area={'main'}>
+    Main
+  </GridItem>
+  <GridItem pl='2' bg='blue.300' area={'footer'}>
+    Footer
+  </GridItem>
+</Grid> 
+
+  </div>
+</div>
+
+<style>
+        {`
+          
+            .row{
+              
+            
+        
+          }
+          .posters{
+            display: flex;
+        
+               overflow-x: scroll;
+               overflow-y: hidden;
+        }
+        .posters::-webkit-scrollbar{
+          display:none;
+        `}
+      </style>
+
+
+
+
+
+
+
     </>
   );
 }
+
+
+
+
+  
