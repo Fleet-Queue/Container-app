@@ -3,7 +3,20 @@ import { Box, Image, Heading, Flex } from '@chakra-ui/react';
 import forwarder from '../icons/forwarder-100x100.png';
 import transporter from '../icons/truck-100x100.png';
 
+  
+import { useNavigate } from 'react-router-dom';
+
 const Card = ({ logo, name }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (name === 'Forwarder') {
+      navigate('/forwarder');
+    } else {
+      navigate('/transporter');
+    }
+  };
+
   return (
     <Flex
       maxW="sm"
@@ -21,6 +34,7 @@ const Card = ({ logo, name }) => {
       bg="white"
       color="gray.800"
       pt={{ base: 4, md: 8 }}
+      onClick={handleClick}
     >
       <Image src={logo} boxSize="70px" mt={8} />
       <Box p={4} textAlign="center">
