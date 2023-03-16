@@ -22,8 +22,6 @@ import {
   import {SideDrawer} from '../miscellaneous/sideDrawer';
   
   
-  
-    
 export const Navbar = () => {
   return (
     <>
