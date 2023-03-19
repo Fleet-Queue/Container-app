@@ -7,6 +7,7 @@ import {
     Grid,
     GridItem,
     WrapItem,
+    Spacer,
 
 } from '@chakra-ui/react';
 
@@ -23,10 +24,12 @@ export const Queue = () => {
     return (
         <>
 
-            <Stack mt={3} ml={3} direction={'row'} spacing={40}>
-                <Text color="black" fontWeight="bold">In Queue</Text>
-                <Text color="black" fontWeight="bold">20ft/40ft</Text>
-            </Stack>
+<Stack mt={3} ml={3} direction="row" >
+  <Text color="black" fontSize='xl' fontWeight="bold">In Queue</Text>
+  <Spacer />
+  <Text color="black" fontSize='xl' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text>
+</Stack>
+
 
 
             <div className="row">
@@ -51,16 +54,16 @@ export const Queue = () => {
                         
                     >
 
-                        <GridItem pl='8' pt='1' bg='#D4E5F6' borderTopRadius={10} fontSize='2xl' area={'header'}>
+                        <GridItem pl='8' pt='1' bg='#D4E5F6' borderTopRadius={10} fontSize='xl' area={'header'}>
                         {item.header}
                         </GridItem>
                         <GridItem  pl='8' pt='4' bg='#D4E5F6' borderBottomStartRadius={10} area={'nav'}>
             <span dangerouslySetInnerHTML={{__html: item.nav}} />
              </GridItem>
-                        <GridItem pl='8' pt='4' bg='#D4E5F6' area={'main'}>
+                        <GridItem justifySelf={'end'} pt='4' pr='4' bg='#D4E5F6' area={'main'}>
                         {item.main}
                         </GridItem>
-                        <GridItem pl='4' pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
+                        <GridItem justifySelf={'end'} pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
                             <WrapItem>
                                 <Button colorScheme='blue' size='sm'>Cancel</Button>
                             </WrapItem>
