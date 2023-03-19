@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Stack, Text, Grid, GridItem, WrapItem } from '@chakra-ui/react';
+import { Button, Stack, Text, Grid, GridItem, WrapItem, Spacer } from '@chakra-ui/react';
 
 export const Alotted = () => {
 
@@ -10,10 +10,11 @@ export const Alotted = () => {
       ];
   return (
     <>
-      <Stack mt={3} ml={3} direction={'row'} spacing={40}>
-        <Text color="black" fontWeight="bold">Alotted/Ongoing</Text>
-        <Text color="black" fontWeight="bold">20ft/40ft</Text>
-      </Stack>
+      <Stack mt={3} ml={3} direction="row" >
+  <Text color="black" fontSize='xl' fontWeight="bold">In Queue</Text>
+  <Spacer />
+  <Text color="black" fontSize='xl' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text>
+</Stack>
 
       <div className="row">
         <div className="posters">
