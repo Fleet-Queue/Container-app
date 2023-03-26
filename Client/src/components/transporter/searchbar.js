@@ -1,44 +1,30 @@
-
 import {
-    Box,
-    Input,
-    Button,
-    InputGroup,
-    InputRightElement,
+  Box,
+  Input,
+  Button,
+  InputGroup,
+  InputRightElement,
+} from '@chakra-ui/react';
+import { Search2Icon } from '@chakra-ui/icons';
+import { FaFilter } from 'react-icons/fa';
 
-  
-  } from '@chakra-ui/react';
-  
-  import {Search2Icon} from '@chakra-ui/icons';
-
-  
-  export  const Searchbar = () => {
-     
-  
-    return (
-      <>
-
-  
-  
-  <Box display="flex" pb={2} mt={2} m={2}>
-  <InputGroup>
-    <Input placeholder="Search by vehicle no" mr={2}/>
-   
-      <InputRightElement width='4.5rem'>
-          <Button h='1.75rem' >
-          {<Search2Icon />}
-          </Button>
-        </InputRightElement>
-    </InputGroup>
-  </Box>
-  
-
-  
-      </>
-    );
-  }
-  
-  
-  
-  
-    
+export const Searchbar = () => {
+  return (
+    <>
+      <Box display="flex" pb={2} mt={2} m={2}>
+        <InputGroup>
+          <Input placeholder="Search by vehicle no"  />
+          <InputRightElement>
+          <Button h="1.75rem" mr={1}>
+          <Search2Icon />
+            </Button>
+            <Button h="1.75rem" mr={14}>
+            <FaFilter />
+            </Button>
+            
+          </InputRightElement>
+        </InputGroup>
+      </Box>
+    </>
+  );
+};
