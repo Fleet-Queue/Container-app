@@ -24,10 +24,10 @@ export const Queue = () => {
     return (
         <>
 
-<Stack mt={3} ml={3} direction="row" >
-  <Text color="black" fontSize='xl' fontWeight="bold">In Queue</Text>
+<Stack mt={3} ml={3} direction="row" bg='#f4f5f4' m={3} p={1} >
+  <Text color="black" fontSize='l' fontWeight="bold">In Queue</Text>
   <Spacer />
-  <Text color="black" fontSize='xl' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text>
+  <Text color="black" fontSize='l' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text>
 </Stack>
 
 
@@ -47,27 +47,30 @@ export const Queue = () => {
                         fontWeight='bold'
                         m={5}
                         border='1px'
+              
                         borderRadius='10px'
-                        borderColor='#D4E5F6'
-                        backgroundColor='#D4E5F6'
+                        borderColor='#F1F1F1'
                         boxShadow={'md'}
                         
                     >
 
-                        <GridItem pl='8' pt='1' bg='#D4E5F6' borderTopRadius={10} fontSize='xl' area={'header'}>
-                        {item.header}
+                        <GridItem pl='2' pt='1' bg='white' borderTopRadius={10} fontSize='xl' area={'header'}>
+                        <GridItem m='2' pl='2' bg='#f4f5f4' borderRadius={10} fontSize='xl'>{item.header}</GridItem>
                         </GridItem>
-                        <GridItem  pl='8' pt='4' bg='#D4E5F6' borderBottomStartRadius={10} area={'nav'}>
-            <span dangerouslySetInnerHTML={{__html: item.nav}} />
+
+                     <GridItem key={item.id} pl='1' pt='1' bg='white' borderBottomStartRadius={10} area={'nav'}>
+             <GridItem m='2' pl='4' bg='#fef5da' borderRadius={5} > <span dangerouslySetInnerHTML={{__html: item.nav}} /></GridItem>
+           
              </GridItem>
-                        <GridItem justifySelf={'end'} pt='4' pr='4' bg='#D4E5F6' area={'main'}>
-                        {item.main}
-                        </GridItem>
-                        <GridItem justifySelf={'end'} pt='1' pr='2' bg='#D4E5F6' borderBottomEndRadius={10} area={'footer'}>
-                            <WrapItem>
-                                <Button colorScheme='blue' size='sm'>Cancel</Button>
-                            </WrapItem>
-                        </GridItem>
+              <GridItem pl='2' pt={3} bg='white' area={'main'}>
+                {item.main}
+                
+              </GridItem>
+              <GridItem pl='0' pt='1' pr='2' bg='white' borderBottomEndRadius={10} area={'footer'}>
+                <WrapItem>
+                  <Button bg={'#ecf2f6'} size='sm'>Cancel</Button>
+                </WrapItem>
+              </GridItem>
                     </Grid>
   ))}
 

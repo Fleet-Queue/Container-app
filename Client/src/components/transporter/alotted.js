@@ -12,7 +12,7 @@ export const Alotted = () => {
   return (
     <>
       <Stack mt={3} ml={3} direction="row" bg='#f4f5f4' m={2} p={1} >
-  <Text color="black" fontSize='l' fontWeight="bold">In Queue</Text>
+  <Text color="black" fontSize='l' fontWeight="bold">Alotted/Ongoing</Text>
   <Spacer />
   <Text color="black" fontSize='l' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text>
 </Stack>
