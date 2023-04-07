@@ -4,6 +4,7 @@ import {
   Button,
   InputGroup,
   InputRightElement,
+  Select,
 } from '@chakra-ui/react';
 import { Search2Icon } from '@chakra-ui/icons';
 import { FaFilter } from 'react-icons/fa';
@@ -18,9 +19,8 @@ export const Searchbar = () => {
           <Button h="1.75rem" mr={1}>
           <Search2Icon />
             </Button>
-            <Button h="1.75rem" mr={14}>
-            <FaFilter />
-            </Button>
+            <Select icon={<FaFilter />} h="1.75rem" mr={14}/>
+            
             
           </InputRightElement>
         </InputGroup>
