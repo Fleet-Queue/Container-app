@@ -3,9 +3,17 @@ import forwarder from '../icons/forwarder-100x100.png';
 import transporter from '../icons/truck-100x100.png';
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 
-
+import { useNavigate } from 'react-router-dom';
 const UserModeSelection = (details) => {
+  
+  const navigate = useNavigate();
   console.log(details);
+
+const usermode = () => {
+    navigate('/transporter');
+
+}
+
 
   const onClose = () => {
     details.close();
@@ -20,9 +28,9 @@ const UserModeSelection = (details) => {
         <ModalCloseButton />
         <ModalBody>
           <Grid templateColumns="repeat(5, 1fr)" gap={2}>
-            <GridItem colSpan={2} display="flex" alignItems="center">
+            <GridItem colSpan={2} display="flex" alignItems="center" onClick={usermode}>
               <Flex align="center" justify="center" direction="column">
-                <Text fontSize="xl" fontWeight="bold">
+                <Text fontSize="xl" fontWeight="bold" >
                   Transporter
                 </Text>
                 <Box w="80px" h="80px" bg="gray.100" borderRadius="full" mt={2}>

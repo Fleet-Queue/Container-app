@@ -4,7 +4,7 @@ import { Button,  IconButton ,Drawer, useDisclosure, DrawerContent,DrawerBody,
     DrawerHeader,
     DrawerOverlay,
     DrawerCloseButton,Input, } from "@chakra-ui/react";
-    import { HamburgerIcon, } from '@chakra-ui/icons';
+    import { HamburgerIcon } from '@chakra-ui/icons';
 export function SideDrawer(){
  
    
@@ -19,7 +19,8 @@ export function SideDrawer(){
             aria-label={'Open Menu'}
             ref={btnRef}
             onClick={onOpen}
-          
+          background='black'
+          color='white'
           />
             
             <Drawer

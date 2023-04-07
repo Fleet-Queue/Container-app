@@ -11,7 +11,7 @@ import { FaFilter } from 'react-icons/fa';
 export const Searchbar = () => {
   return (
     <>
-      <Box display="flex" pb={2} mt={2} m={2}>
+      <Box display="flex" pb={2} mt={2} pt={2} m={2}>
         <InputGroup>
           <Input placeholder="Search by vehicle no"  />
           <InputRightElement>
