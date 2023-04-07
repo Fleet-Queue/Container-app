@@ -15,6 +15,7 @@ import {
   } from '@chakra-ui/react'
   
   import { useNavigate } from 'react-router-dom';
+  import UserModeSelection from '../UserModeSelection';
 
   import { Logo } from './Logo'
   import React, { useState } from 'react'
@@ -28,11 +29,16 @@ import {
     const [password, setPassword] = useState();
     const [Show, setShow] = useState(false);
     const [loading,setLoading]=useState(false);
+    const [pOpen,setPOpen]=useState(true);
+    const [pop,setPop]=useState(false); 
+  
+
   
 
     const handleClick = () => setShow(!Show);
 
     const submitHandler =async (e) => {
+      
       setLoading(true)
       if(!Mobno || !password){
         toast({
@@ -44,7 +50,21 @@ import {
           setLoading(false)
           return
       }else{
-        navigate("/user-mode")
+        // navigate("/user-mode")
+       console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj')
+       setPOpen(true)
+     console.log(pOpen)
+       const onClose=()=>{
+          
+           setLoading(false)
+           setPop()
+        }
+        setPop(()=> (
+        <UserModeSelection
+          open = {pOpen}
+          close={onClose}
+        />
+        ))
       }
     }
 
@@ -60,6 +80,8 @@ import {
         sm: '8',
       }}
     >
+
+      {pop}
       <Stack spacing="8">
         <Stack spacing="6">
           <Logo />

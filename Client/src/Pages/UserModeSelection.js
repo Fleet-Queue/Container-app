@@ -1,76 +1,56 @@
-import React from 'react';
-import { Box, Image, Heading, Flex } from '@chakra-ui/react';
+import { Box, Image, Flex, Button, Grid, GridItem, Text } from '@chakra-ui/react';
 import forwarder from '../icons/forwarder-100x100.png';
 import transporter from '../icons/truck-100x100.png';
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 
-  
-import { useNavigate } from 'react-router-dom';
 
-const Card = ({ logo, name }) => {
-  const navigate = useNavigate();
+const UserModeSelection = (details) => {
+  console.log(details);
 
-  const handleClick = () => {
-    if (name === 'Forwarder') {
-      navigate('/forwarder');
-    } else {
-      navigate('/transporter');
-    }
+  const onClose = () => {
+    details.close();
   };
 
   return (
-    <Flex
-      maxW="sm"
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow="md"
-      _hover={{
-        boxShadow: 'xl',
-        transition: 'all 0.2s ease-out',
-      }}
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      bg="white"
-      color="gray.800"
-      pt={{ base: 4, md: 8 }}
-      onClick={handleClick}
-    >
-      <Image src={logo} boxSize="70px" mt={8} />
-      <Box p={4} textAlign="center">
-        <Heading as="h2" size="md" mt={4} mb={2}>
-          {name}
-        </Heading>
-      </Box>
-    </Flex>
-  );
-};
+    <>
+    <Modal isOpen={details.open} onClose={onClose} size="xs" >
+      <ModalOverlay />
+      <ModalContent minHeight="300px" maxHeight="600px">
+        <ModalHeader>Select User Mode</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Grid templateColumns="repeat(5, 1fr)" gap={2}>
+            <GridItem colSpan={2} display="flex" alignItems="center">
+              <Flex align="center" justify="center" direction="column">
+                <Text fontSize="xl" fontWeight="bold">
+                  Transporter
+                </Text>
+                <Box w="80px" h="80px" bg="gray.100" borderRadius="full" mt={2}>
+                  <Image src={transporter} alt="Transporter" w="60px" h="60px" mx="auto" my={3} />
+                </Box>
+              </Flex>
+            </GridItem>
+            <GridItem colStart={4} colEnd={6} display="flex" alignItems="center">
+            <Flex align="center" justify="center" direction="column">
+                <Text fontSize="xl" fontWeight="bold">
+                  Forwarder
+                </Text>
+                <Box w="80px" h="80px" bg="gray.100" borderRadius="full" mt={2}>
+                  <Image src={forwarder} alt="Forwarder" w="60px" h="60px" mx="auto" my={3} />
+                </Box>
+              </Flex>
+            </GridItem>
+          </Grid>
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="blue" mr={3} onClick={onClose}>
+            Close
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
 
-const UserModeSelection = () => {
-  return (
-    <Box maxW="1200px" m="0 auto" mx="auto">
-      <Heading as="h1" size="2xl" textAlign="center" mt={16} mb={8} color="gray.800">
-        Select User Mode
-      </Heading>
-      <Box display="flex" flexWrap="wrap" justifyContent="space-between">
-        <Box flexBasis={['100%', '45%']} mb={8} className="card-wrapper">
-          <Card logo={forwarder} name="Forwarder" />
-        </Box>
-        <Box flexBasis={['100%', '45%']} mb={8} className="card-wrapper">
-          <Card logo={transporter} name="Transporter" />
-        </Box>
-      </Box>
-      <style>
-        {`
-          @media (max-width: 480px) {
-            .card-wrapper {
-              padding-left: 10px;
-              padding-right: 10px;
-            }
-          }
-        `}
-      </style>
-    </Box>
+    </>
   );
 };
 
