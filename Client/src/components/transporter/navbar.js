@@ -15,8 +15,8 @@ import {
 
   } from '@chakra-ui/react';
   
-  
   import {SideDrawer} from '../miscellaneous/sideDrawer';
+  
   
   
 export const Navbar = () => {
@@ -27,17 +27,10 @@ export const Navbar = () => {
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       <SideDrawer/>
       
-        <HStack spacing={8} alignItems={'center'}>
-          <Box>Transporter</Box>
-          {/* <HStack
-            as={'nav'}
-            spacing={4}
-            display={{ base: 'none', md: 'flex' }}>
-            {Links.map((link) => (
-              <NavLink key={link}>{link}</NavLink>
-            ))}
-          </HStack> */}
-        </HStack>
+      <HStack spacing={8} alignItems={'center'}>
+  <Box style={{ fontFamily: "font-family: 'Work Sans', sans-serif;" }}>Transporter</Box>
+</HStack>
+
         <Flex alignItems={'center'}>
           <Menu>
             <MenuButton
