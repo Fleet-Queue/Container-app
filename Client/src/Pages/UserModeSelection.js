@@ -1,8 +1,8 @@
-import { Box, Image, Heading, Flex, useDisclosure, Button, Grid, GridItem, Text } from '@chakra-ui/react';
+import { Box, Image, Flex, Button, Grid, GridItem, Text } from '@chakra-ui/react';
 import forwarder from '../icons/forwarder-100x100.png';
 import transporter from '../icons/truck-100x100.png';
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+
 
 const UserModeSelection = (details) => {
   console.log(details);
@@ -12,10 +12,11 @@ const UserModeSelection = (details) => {
   };
 
   return (
-    <Modal isOpen={details.open} onClose={onClose} size="xs">
+    <>
+    <Modal isOpen={details.open} onClose={onClose} size="xs" >
       <ModalOverlay />
       <ModalContent minHeight="300px" maxHeight="600px">
-        <ModalHeader>Choose it</ModalHeader>
+        <ModalHeader>Select User Mode</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Grid templateColumns="repeat(5, 1fr)" gap={2}>
@@ -48,6 +49,8 @@ const UserModeSelection = (details) => {
         </ModalFooter>
       </ModalContent>
     </Modal>
+
+    </>
   );
 };
 

@@ -38,6 +38,7 @@ import {
     const handleClick = () => setShow(!Show);
 
     const submitHandler =async (e) => {
+      
       setLoading(true)
       if(!Mobno || !password){
         toast({
@@ -50,12 +51,13 @@ import {
           return
       }else{
         // navigate("/user-mode")
-       
-     
+       console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj')
+       setPOpen(true)
+     console.log(pOpen)
        const onClose=()=>{
-           setPOpen(false)
+          
            setLoading(false)
-           setPop("")
+           setPop()
         }
         setPop(()=> (
         <UserModeSelection
