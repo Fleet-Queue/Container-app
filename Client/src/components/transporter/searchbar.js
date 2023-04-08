@@ -14,14 +14,27 @@ export const Searchbar = () => {
     <>
       <Box display="flex" pb={2} mt={2} pt={2} m={2}>
         <InputGroup>
-          <Input placeholder="Search by vehicle no"  />
+          <Input placeholder="Search by vehicle no" />
           <InputRightElement>
-          <Button h="1.75rem" mr={1}>
-          <Search2Icon />
+          <Select
+              icon={<FaFilter />}
+              border={'none'}
+              h="1.75rem" mr={2}
+              style={{ textAlign: 'left', paddingLeft: '0.6rem' }}
+            >
+              <option>20 Ft</option>
+              <option>40 Ft</option>
+            </Select>
+            <Button    h="1.75rem"
+             
+              mr={14}
+            
+             >
+              <Search2Icon />
             </Button>
-            <Select icon={<FaFilter />} h="1.75rem" mr={14}/>
             
-            
+
+
           </InputRightElement>
         </InputGroup>
       </Box>
