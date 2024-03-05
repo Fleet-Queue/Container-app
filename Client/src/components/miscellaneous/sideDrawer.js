@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button,  IconButton ,Drawer, useDisclosure, DrawerContent,DrawerBody,
+import { Button,  IconButton ,Drawer, useDisclosure, DrawerContent,DrawerBody,Box,VStack,StackDivider,Icon,HStack,Text,
     DrawerFooter,
     DrawerHeader,
     DrawerOverlay,
     DrawerCloseButton,Input, } from "@chakra-ui/react";
     import { HamburgerIcon } from '@chakra-ui/icons';
+    import { FiUser, FiInfo, FiSettings } from "react-icons/fi";
 export function SideDrawer(){
  
    
@@ -33,17 +34,31 @@ export function SideDrawer(){
               <DrawerContent>
                 <DrawerCloseButton />
                 <DrawerHeader>Transporter Dashboard</DrawerHeader>
-      
-                <DrawerBody>
-                  <Input placeholder='Type here...' />
-                </DrawerBody>
-      
-                <DrawerFooter>
-                  <Button variant='outline' mr={3} onClick={onClose}>
-                    Cancel
-                  </Button>
-                  <Button colorScheme='blue'>Save</Button>
-                </DrawerFooter>
+
+               <DrawerBody>
+      <VStack
+        divider={<StackDivider borderColor="gray.200" />}
+        spacing={4}
+        align="stretch"
+      >
+        <HStack spacing={2} cursor="pointer">
+          <Icon as={FiUser} boxSize={6}  />
+          <Text fontSize="md">Profile</Text>
+        </HStack>
+        <HStack spacing={2} cursor="pointer">
+          <Icon as={FiInfo} boxSize={6} />
+          <Text fontSize="md">About</Text>
+        </HStack>
+        <HStack spacing={2} cursor="pointer">
+          <Icon as={FiSettings} boxSize={6} />
+          <Text fontSize="md">Settings</Text>
+        </HStack>
+      </VStack>
+    </DrawerBody>
+
+
+
+  
               </DrawerContent>
             </Drawer>
           </>
