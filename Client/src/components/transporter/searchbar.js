@@ -16,12 +16,14 @@ export const Searchbar = () => {
         <InputGroup>
           <Input placeholder="Search by vehicle no"  />
           <InputRightElement>
-          <Button h="1.75rem" mr={1}>
+          <Button h="1.75rem" mr={4}>
           <Search2Icon />
             </Button>
-            <Select icon={<FaFilter />} h="1.75rem" mr={14}/>
-            
-            
+            {/* <Select icon={<FaFilter />} h="1.75rem" mr={14}>
+            <option value='option1'>Option 1</option>
+  <option value='option2'>Option 2</option>
+  <option value='option3'>Option 3</option>
+  </Select> */}
           </InputRightElement>
         </InputGroup>
       </Box>

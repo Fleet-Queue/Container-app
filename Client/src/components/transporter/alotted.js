@@ -1,95 +1,44 @@
 import React from 'react';
-import { Button, Stack, Text, Grid, GridItem, WrapItem, Spacer } from '@chakra-ui/react';
-import {
-  List,
-  ListItem,
-  ListIcon,
-  UnorderedList,
-} from '@chakra-ui/react'
+import { Text, Flex, Wrap, WrapItem, Box } from '@chakra-ui/react';
+import { VehicleBox } from '../miscellaneous/vehicleBox';
+
 export const Alotted = () => {
+  const data = [
+    { id: 1, vehicleNo: "KL-40-1234", count: [50, 20, 1], feet: 20 },
+    { id: 2, vehicleNo: "KL-40-5678", count: [30, 30, 0], feet: 40 },
+    { id: 3, vehicleNo: "KL-40-9012", count: [20, 2, 23], feet: 20 },
+    { id: 4, vehicleNo: "KL-40-1434", count: [50, 20, 1], feet: 20 },
+    { id: 5, vehicleNo: "KL-40-5638", count: [30, 30, 0], feet: 40 },
+    { id: 6, vehicleNo: "KL-40-9022", count: [20, 2, 23], feet: 20 },
+    { id: 7, vehicleNo: "KL-40-1264", count: [50, 20, 1], feet: 20 },
+    { id: 8, vehicleNo: "KL-40-5378", count: [30, 30, 0], feet: 40 },
+    { id: 9, vehicleNo: "KL-40-9212", count: [20, 2, 23], feet: 20 },
+  ];
 
-    const data = [
-        { id: 1, header: 'KL-40-1234', nav: 'National Transport<br/>All Kerala Transport<br/>Local Transport', main: '20 FT' },
-        { id: 2, header: 'KL-40-5678', nav: 'National Transport<br/>All Kerala Transport<br/>Local Transport', main: '40 FT' },
-        { id: 3, header: 'KL-40-9012', nav: 'National Transport<br/>All Kerala Transport<br/>Local Transport', main: '20 FT' },
-        
-      ];
+  const vTypes = ['National Transport', 'All Kerala Transport', 'Local Transport'];
 
-      const vTypes = ['National Transport', 'All Kerala Transport', 'Local Transport'];
-
-    
   return (
     <>
-      <Stack mt={3} ml={3} direction="row" bg='#f4f5f4' m={2} p={1} >
-  <Text color="black" fontSize='l' fontWeight="bold">Alotted/Ongoing</Text>
-  <Spacer />
-  {/* <Text color="black" fontSize='l' fontWeight="bold" textAlign="right" pr={'8'}>20ft/40ft</Text> */}
-</Stack>
+      <Flex mt={3} ml={3} alignItems="center">
+        <Text color="black" fontSize="l" fontWeight="bold">Alotted/Ongoing</Text>
+      </Flex>
 
-      <div className="row">
-        <div className="posters">
+      <Box overflowX="auto"  sx={{
+          overflowX: 'scroll',
+          overflowY: 'hidden',
+          scrollbarWidth: 'none', // For Firefox
+          '&::-webkit-scrollbar': {
+            display: 'none', // For Chrome, Safari, and Opera
+          },
+        }}>
+        <Flex>
           {data.map((item) => (
-            <Grid
-              key={item.id}
-              templateAreas={`"header header" "nav main" "nav footer"`}
-              gridTemplateRows={'50px 1fr 40px'}
-              gridTemplateColumns={'250px 1fr'}
-              h='220px'
-              gap='0'
-              color='blackAlpha.700'
-              fontWeight='bold'
-              m={2}
-              border='1px'
-              
-              borderRadius='10px'
-              borderColor='#F1F1F1'
-              boxShadow={'md'}
-            >
-              <GridItem pl='2' pt='1' bg='white' borderTopRadius={10}   area={'header'}>
-                <GridItem m='2' pl='2' bg='#f4f5f4' borderRadius={10} fontSize='xl'>
-                  <Text  fontSize='xl'>  {item.header}</Text>
-                </GridItem>
-                
-              </GridItem>
-             <GridItem key={item.id} pl='1' pt='1' bg='white' borderBottomStartRadius={10} area={'nav'}>
-               <GridItem m='2' pl='4'  borderRadius={5} >
-              <UnorderedList>
-  <ListItem>National Transport : 50</ListItem>
-  <ListItem>All Kerala Transport : 34</ListItem>
-  <ListItem>Local Transport : 2</ListItem>
-</UnorderedList>
-</GridItem>
-             {/* <GridItem m='2' pl='4' bg='#fef5da' borderRadius={5} > <span dangerouslySetInnerHTML={{__html: item.nav}} /></GridItem> */}
-           
-             </GridItem>
-              <GridItem pl='2' pt={3} bg='white' area={'main'}>
-                {item.main}
-                
-              </GridItem>
-              <GridItem pl='0' pt='0' pb='3' pr='3' bg='white' borderBottomEndRadius={10} area={'footer'}>
-                <WrapItem>
-                  <Button bg='#f4f5f4' size='sm'>Cancel</Button>
-                </WrapItem>
-              </GridItem>
-            </Grid>
+            <Box key={item.id} minWidth="300px" flexShrink={0} mr={4}>
+              <VehicleBox data={item} vTypes={vTypes} />
+            </Box>
           ))}
-        </div>
-      </div>
-
-      <style>
-        {`
-          .row{
-            
-          }
-          .posters{
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
-          }
-          .posters::-webkit-scrollbar{
-            display:none;
-          `}
-      </style>
+        </Flex>
+      </Box>
     </>
   );
-}
+};

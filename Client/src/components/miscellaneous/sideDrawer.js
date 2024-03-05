@@ -19,8 +19,8 @@ export function SideDrawer(){
             aria-label={'Open Menu'}
             ref={btnRef}
             onClick={onOpen}
-          background='black'
-          color='white'
+          background='white'
+          color='#172B4D'
           />
             
             <Drawer

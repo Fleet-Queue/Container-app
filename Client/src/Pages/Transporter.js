@@ -27,8 +27,6 @@ export  const Transporter = () => {
 {/* In Queue */}
 
 <Queue/>
-
-
     </>
   );
 }

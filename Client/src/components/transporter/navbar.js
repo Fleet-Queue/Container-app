@@ -12,7 +12,8 @@ import {
     MenuItem,
     MenuDivider,
     useColorModeValue,
-    Text
+    Text,
+    Heading 
 
   } from '@chakra-ui/react';
   
@@ -24,15 +25,18 @@ export const Navbar = () => {
   return (
     <>
     
-    <Box bg={useColorModeValue('black.0', 'black.100')} px={4}>
+    <Box 
+   // bg={useColorModeValue('black.0', 'black.100')} 
+   bg={'#0052CC'}
+    px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       <SideDrawer/>
       
       <HStack spacing={8} alignItems={'center'}>
   <Box>
-    <Text fontSize='lg' color={'white'}>
+    <Heading  fontSize='lg' color={'white'}>
     Transporter
-    </Text>
+    </Heading >
    </Box>
 </HStack>
 
@@ -47,7 +51,7 @@ export const Navbar = () => {
               <Avatar
                 size={'sm'}
                 src={
-                  'https://mdbcdn.b-cdn.net/img/new/avatars/2.webp'
+                  'https://api-private.atlassian.com/users/8b3597e8a7d1d8f2ed7f58bcab1946b8/avatar'
                 }
               />
             </MenuButton>
