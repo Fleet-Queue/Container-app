@@ -1,10 +1,11 @@
 import {
   Stack,
   Text,
-  Grid,
+  Box,
   GridItem,
-  WrapItem,
+  SimpleGrid ,
   Spacer,
+  Flex,
 } from "@chakra-ui/react";
 import { VehicleBox } from "../miscellaneous/vehicleBox";
 export const Queue = () => {
@@ -22,20 +23,18 @@ export const Queue = () => {
 
   return (
     <>
-      <Stack mt={3} ml={3} direction="row" bg="#f4f5f4" m={3} p={1}>
-        <Text color="black" fontSize="l" fontWeight="bold">
-          In Queue
-        </Text>
-        <Spacer />
-      </Stack>
+         <Flex mt={3} ml={3} alignItems="center">
+        <Text color="black" fontSize="xl" fontWeight="bold">In Queue</Text>
+      </Flex>
 
-      <div className="row">
+
+      <Box sx={{paddingX: 4,}}>
         <div className="queue">
           {data.map((item) => (
             <VehicleBox data={item} vTypes={vTypes} />
           ))}
         </div>
-      </div>
+      </Box>
 
       <style>
         {`

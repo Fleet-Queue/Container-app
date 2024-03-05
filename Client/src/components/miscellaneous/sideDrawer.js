@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button,  IconButton ,Drawer, useDisclosure, DrawerContent,DrawerBody,Box,VStack,StackDivider,Icon,HStack,Text,
     DrawerFooter,
+    Divider,
     DrawerHeader,
     DrawerOverlay,
     DrawerCloseButton,Input, } from "@chakra-ui/react";
@@ -20,8 +21,9 @@ export function SideDrawer(){
             aria-label={'Open Menu'}
             ref={btnRef}
             onClick={onOpen}
-          background='white'
-          color='#172B4D'
+          background='#0052CC'
+          color='#ffff'
+         _hover={{ color: 'gray.800' }} 
           />
             
             <Drawer
@@ -34,11 +36,11 @@ export function SideDrawer(){
               <DrawerContent>
                 <DrawerCloseButton />
                 <DrawerHeader>Transporter Dashboard</DrawerHeader>
-
-               <DrawerBody>
+                   <DrawerBody >
       <VStack
         divider={<StackDivider borderColor="gray.200" />}
         spacing={4}
+
         align="stretch"
       >
         <HStack spacing={2} cursor="pointer">

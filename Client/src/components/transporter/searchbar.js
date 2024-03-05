@@ -20,6 +20,7 @@ export const Searchbar = () => {
               icon={<FaFilter />}
               border={'none'}
               h="1.75rem" mr={2}
+              p={3}
               style={{ textAlign: 'left', paddingLeft: '0.6rem' }}
             >
               <option>20 Ft</option>

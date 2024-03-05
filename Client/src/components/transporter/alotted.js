@@ -20,7 +20,7 @@ export const Alotted = () => {
   return (
     <>
       <Flex mt={3} ml={3} alignItems="center">
-        <Text color="black" fontSize="l" fontWeight="bold">Alotted/Ongoing</Text>
+        <Text color="black" fontSize="xl" fontWeight="bold">Alotted/Ongoing</Text>
       </Flex>
 
       <Box overflowX="auto"  sx={{

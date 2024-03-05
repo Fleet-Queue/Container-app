@@ -30,8 +30,8 @@ export const VehicleBox = ({ data, vTypes, ...props }) => {
           templateRows="repeat(3, 1fr)"
           templateColumns="repeat(5, 1fr)"
         >
-          <GridItem colSpan={5} p={2} bg="#f4f5f4" borderRadius="10px">
-            <Text as="b" fontSize="xl">
+          <GridItem colSpan={5} p={2} bg="#f4f5f4"  borderRadius="10px">
+            <Text as="b" fontSize="xl"  fontFamily="arial">
               {data.vehicleNo}
             </Text>
           </GridItem>
